@@ -41,7 +41,7 @@ For detailed information about the HDP-GPC methodology, please refer to:
 - **Paper**: [Bayesian Nonparametric Dynamical Clustering of Time Series](https://arxiv.org/abs/2501.01234) (Pérez-Herrero et al.)
 - **Implementation**: [HDP-GPC GitHub Repository](https://github.com/AdrianPerezHerrero/HDP-GPC)
 
-##Data
+## Data
 
 The data that support the findings of this study are available at the Department of Clinical Science and Education Söderjukhuset, Karolinska Institutet, Stockholm, Sweden, but restrictions apply to the availability of these data, which were used under license for the current study, and so are not publicly available. Data are, however, available from the authors upon reasobale request and with permission of the Department of Clinical Science and Education Söderjukhuset, Karolinska Institutet, Stockholm, Sweden.
 
