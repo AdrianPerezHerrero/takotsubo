@@ -4,28 +4,29 @@ This repository contains the implementation scripts for the paper **"Generative 
 
 ## Overview
 
-Takotsubo syndrome, also known as stress-induced cardiomyopathy, presents diagnostic challenges due to its similarity to acute myocardial infarction. This project applies advanced machine learning techniques to improve the classification and understanding of Takotsubo syndrome through electrocardiogram (ECG) analysis.
+Takotsubo syndrome, also known as stress-induced cardiomyopathy, presents diagnostic challenges due to its similarity to acute myocardial infarction. This project applies advanced machine learning techniques to improve the classification and understanding of Takotsubo syndrome through electrocardiogram (ECG) analysis. It should be noted that the pipeline could be extended to perform an exploratory study on any ECG or biosignal classification problem.
 
-## Repository Contents
+### Key Features
 
-The repository includes three main Python scripts:
+- **Multi-output Gaussian Process modeling** of 8-lead ECG signals simultaneously
+- **Bayesian nonparametric clustering** with automatic cluster number determination
+- **Batch processing** for efficient analysis of multiple heartbeats
+- **Multiple clinical scenarios** including TTS vs STEMI, NSTEMI, and suspected MI
+- **Comprehensive statistical analysis** with cross-validation and odds ratio reporting
 
-### 1. `GPI_test_takotsubo_cluster.py`
-ECG data segmentation and clustering
-- Processes ECG signals to extract heartbeat segments
-- Performs clustering using the HDP-GPC (Hierarchical Dirichlet Process Gaussian Process Clustering) method
-- Identifies distinct cardiac patterns in the data
+## Repository Structure
 
-### 2. `GPI_test_takotsubo_from_ssh.py`
-Model feature extraction
-- Extracts important features and parameters from the trained clustering model
-- Processes the learned representations for subsequent analysis
-- Prepares data for statistical modeling
+### Main Scripts
 
-### 3. `GPI_test_STEMI_logit_statsmodels_comparison_newdata_pure_mean.py`
-Logistic regression analysis
-- Implements logistic regression models for different clinical scenarios
-- Performs statistical analysis and model evaluation
+#### 1. `clustering_ecg_data.py`
+**Multi-Lead ECG Heartbeat Clustering using HDP-GPC**
+
+Performs unsupervised clustering of multi-lead ECG heartbeat segments to identify distinct cardiac patterns.
+
+#### 2. `logistic_regression_analysis.py`
+**Multi-Scenario Logistic Regression for TTS Classification**
+
+Performs comprehensive logistic regression analysis to discriminate between Takotsubo syndrome and different cardiac conditions.
 
 ## Methodology
 
