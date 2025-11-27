@@ -213,7 +213,7 @@ SCENARIO_CONFIGS = {
             # newvar_5 = data[:, 18] - data[:, 17]
             {'target_idx': 18, 'operation': 'subtract', 'operands': [18, 17]},
         ],
-        'delete_after_interaction': [2, 4, 7, 11, 13, 17],
+        'delete_after_interaction': [2, 4, 7, 11, 13],
         'feature_names_original': [
             'Intercept', '1-I', '2-I', '3-I', '4-I', '5-I', '6-I',
             '1-II', '2-II', '3-II',
@@ -982,8 +982,7 @@ def plot_feature_locations(features, labels, important_indices, num_leads=8):
     """
     Visualize important feature locations on average ECG.
     """
-    features = features['ecg_features']
-    features = np.reshape(features, (features.shape[0], -1))
+    features = np.reshape(np.transpose(features, (0,2,1)), (features.shape[0], -1))
     # Calculate average ECG for positive class
     avg_ecg = np.mean(features[labels == 1], axis=0)
 
@@ -1209,7 +1208,7 @@ def main():
     plot_roc_curves(cv_results, title=f"ROC Curves: {config['description']}")
     plot_precision_recall_curves(cv_results, title=f"PR Curves: {config['description']}")
     plot_coefficient_importance(cv_results, feature_names[1:])  # Exclude intercept
-    plot_feature_locations(data, labels, config['important_features'])
+    plot_feature_locations(data['ecg_features'][selected_indices], labels, config['important_features'])
 
     # Print timing
     elapsed_time = (time.time() - start_time) / 60
