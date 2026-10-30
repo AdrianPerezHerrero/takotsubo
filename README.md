@@ -39,7 +39,7 @@ The clustering analysis is performed using the **Hierarchical Dirichlet Process 
 - Captures morphological variations in ECG signals
 
 For detailed information about the HDP-GPC methodology, please refer to:
-- **Paper**: [Bayesian Nonparametric Dynamical Clustering of Time Series](https://arxiv.org/abs/2501.01234) (Pérez-Herrero et al.)
+- **Paper**: [Bayesian Nonparametric Dynamical Clustering of Time Series](https://arxiv.org/abs/2510.06919v2) (Pérez-Herrero et al.)
 - **Implementation**: [HDP-GPC GitHub Repository](https://github.com/AdrianPerezHerrero/HDP-GPC)
 
 ## Data
